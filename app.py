@@ -8,6 +8,7 @@ from routes.phones import phones_bp
 from routes.rate_plans import rate_plans_bp
 from routes.stores import stores_bp
 from routes.about import about_bp
+from routes.init import init_bp
 
 def create_app(config_name='default'):
     """Application factory pattern"""
@@ -25,6 +26,7 @@ def create_app(config_name='default'):
     app.register_blueprint(rate_plans_bp, url_prefix='/rate-plans')
     app.register_blueprint(stores_bp, url_prefix='/stores')
     app.register_blueprint(about_bp, url_prefix='')
+    app.register_blueprint(init_bp, url_prefix='')
     
     # Create database tables
     with app.app_context():
