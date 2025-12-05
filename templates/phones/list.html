@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Phones - Cellcom Order Tracker{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Phone Catalog</h1>
+</div>
+
+<div class="filters">
+    <form method="GET" action="{{ url_for('phones.list_phones') }}" class="filter-form">
+        <div class="filter-group">
+            <label for="brand">Brand:</label>
+            <select name="brand" id="brand">
+                <option value="">All Brands</option>
+                {% for brand in brands %}
+                <option value="{{ brand }}" {% if current_brand == brand %}selected{% endif %}>{{ brand }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label>
+                <input type="checkbox" name="featured" {% if featured_only %}checked{% endif %}>
+                Featured Only
+            </label>
+        </div>
+        
+        <button type="submit" class="btn btn-secondary">Filter</button>
+        <a href="{{ url_for('phones.list_phones') }}" class="btn btn-link">Clear</a>
+    </form>
+</div>
+
+<div class="phones-grid">
+    {% if phones %}
+        {% for phone in phones %}
+        <div class="phone-card {% if phone.is_featured %}featured{% endif %}">
+            <div class="phone-header">
+                <h3>{{ phone.display_name }}</h3>
+                {% if phone.is_featured %}
+                <span class="featured-badge">Featured</span>
+                {% endif %}
+            </div>
+            <div class="phone-details">
+                <div class="phone-detail-item">
+                    <span class="label">Storage:</span>
+                    <span class="value">{{ phone.storage }}</span>
+                </div>
+                <div class="phone-detail-item">
+                    <span class="label">Colour:</span>
+                    <span class="value">{{ phone.colour }}</span>
+                </div>
+                <div class="phone-detail-item">
+                    <span class="label">Price:</span>
+                    <span class="value price">${{ "%.2f"|format(phone.full_price) }}</span>
+                </div>
+                <div class="phone-detail-item">
+                    <span class="label">SKU:</span>
+                    <span class="value sku">{{ phone.bell_sku }}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="text-center">No phones found matching the filters.</p>
+    {% endif %}
+</div>
+{% endblock %}
+

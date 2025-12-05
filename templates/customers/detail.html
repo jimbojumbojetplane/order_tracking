@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Customer {{ customer.full_name }} - Cellcom Order Tracker{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ customer.full_name }}</h1>
+    <a href="{{ url_for('customers.list_customers') }}" class="btn btn-secondary">Back to Customers</a>
+</div>
+
+<div class="detail-grid">
+    <div class="detail-section">
+        <h2>Contact Information</h2>
+        <div class="detail-item">
+            <label>Name:</label>
+            <span>{{ customer.full_name }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Phone:</label>
+            <span>{{ customer.phone_number }}</span>
+        </div>
+        {% if customer.email %}
+        <div class="detail-item">
+            <label>Email:</label>
+            <span>{{ customer.email }}</span>
+        </div>
+        {% endif %}
+        {% if customer.preferred_store_rel %}
+        <div class="detail-item">
+            <label>Preferred Store:</label>
+            <span>{{ customer.preferred_store_rel.name }} - {{ customer.preferred_store_rel.city }}</span>
+        </div>
+        {% endif %}
+        {% if customer.notes %}
+        <div class="detail-item">
+            <label>Notes:</label>
+            <span class="notes-text">{{ customer.notes }}</span>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="detail-section">
+    <h2>Orders ({{ orders|length }})</h2>
+    {% if orders %}
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Order #</th>
+                    <th>Device</th>
+                    <th>Rate Plan</th>
+                    <th>Status</th>
+                    <th>Store</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td><a href="{{ url_for('orders.order_detail', order_id=order.id) }}" class="link">{{ order.order_number }}</a></td>
+                    <td>{{ order.phone.display_name }}</td>
+                    <td>{{ order.rate_plan.name }}</td>
+                    <td><span class="status-badge status-{{ order.status.lower().replace(' ', '-') }}">{{ order.status }}</span></td>
+                    <td>{{ order.store_location }}</td>
+                    <td>{{ order.created_at.strftime('%Y-%m-%d') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p class="text-muted">This customer has no orders yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
+

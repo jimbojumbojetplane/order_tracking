@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Stores - Cellcom Order Tracker{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Store Locations</h1>
+</div>
+
+<div class="filters">
+    <form method="GET" action="{{ url_for('stores.list_stores') }}" class="filter-form">
+        <div class="filter-group">
+            <label for="search">Search:</label>
+            <input type="text" name="search" id="search" value="{{ search }}" placeholder="Store name, city, or address...">
+        </div>
+        
+        <div class="filter-group">
+            <label for="province">Province:</label>
+            <select name="province" id="province">
+                <option value="">All Provinces</option>
+                {% for province in provinces %}
+                <option value="{{ province }}" {% if current_province == province %}selected{% endif %}>{{ province }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-secondary">Filter</button>
+        <a href="{{ url_for('stores.list_stores') }}" class="btn btn-link">Clear</a>
+    </form>
+</div>
+
+<div class="table-container">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Store Name</th>
+                <th>City</th>
+                <th>Province</th>
+                <th>Address</th>
+                <th>Postal Code</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if stores %}
+                {% for store in stores %}
+                <tr>
+                    <td><strong>{{ store.name }}</strong></td>
+                    <td>{{ store.city }}</td>
+                    <td>{{ store.province }}</td>
+                    <td>{{ store.street or '-' }}</td>
+                    <td>{{ store.postal_code or '-' }}</td>
+                    <td><a href="{{ url_for('stores.store_detail', store_id=store.id) }}" class="btn btn-sm btn-primary">View</a></td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="6" class="text-center">No stores found.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Rate Plans - Cellcom Order Tracker{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Bell Rate Plans</h1>
+    <p class="page-subtitle">Reference catalog of available rate plans</p>
+</div>
+
+<div class="table-container">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Plan Name</th>
+                <th>Monthly Price</th>
+                <th>Data</th>
+                <th>Unlimited Canada</th>
+                <th>Unlimited US</th>
+                <th>Segment</th>
+                <th>Bell Plan Code</th>
+                <th>Roaming Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if rate_plans %}
+                {% for plan in rate_plans %}
+                <tr>
+                    <td><strong>{{ plan.name }}</strong></td>
+                    <td>${{ "%.2f"|format(plan.monthly_price) }}</td>
+                    <td>
+                        {% if plan.data_gb %}
+                            {{ plan.data_gb }} GB
+                        {% else %}
+                            Unlimited
+                        {% endif %}
+                    </td>
+                    <td>{{ '✓' if plan.unlimited_canada else '✗' }}</td>
+                    <td>{{ '✓' if plan.unlimited_us else '✗' }}</td>
+                    <td><span class="segment-badge segment-{{ plan.segment }}">{{ plan.segment }}</span></td>
+                    <td>{{ plan.bell_plan_code or '-' }}</td>
+                    <td class="notes-cell">{{ plan.roaming_notes or '-' }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="8" class="text-center">No rate plans found.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="info-box">
+    <p><strong>Note:</strong> This is a reference catalog. To update rate plans, modify the seed data and re-run the seed script.</p>
+</div>
+{% endblock %}
+

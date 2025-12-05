@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}About - Cellcom Order Tracker{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>About Cellcom Order Tracker</h1>
+</div>
+
+<div class="about-section">
+    <h2>Description</h2>
+    <p>
+        Cellcom Order Tracker is an internal web application designed to help Cellcom store representatives and managers 
+        track mobile phone orders from initial creation through activation and beyond. The system manages customer information, 
+        mobile device inventory, Bell rate plans, and the complete order lifecycle. It provides a centralized platform for 
+        order tracking, status management, and customer relationship management across all Cellcom store locations.
+    </p>
+</div>
+
+<div class="about-section">
+    <h2>Architecture</h2>
+    <div class="architecture-diagram">
+        <div class="arch-box arch-browser">
+            <div class="arch-icon">🖥️</div>
+            <h3>Store Reps & Managers<br/>(Browser)</h3>
+            <ul class="arch-features">
+                <li>Login</li>
+                <li>Order dashboard</li>
+                <li>Customer lookup</li>
+                <li>Device & rate-plan catalog</li>
+            </ul>
+        </div>
+        
+        <div class="arch-arrow">→</div>
+        
+        <div class="arch-box arch-app">
+            <div class="arch-icon">⚙️</div>
+            <h3>Flask App on<br/>HostPapa VPS</h3>
+            <ul class="arch-features">
+                <li>Auth & sessions</li>
+                <li>Order workflows</li>
+                <li>Business rules & validation</li>
+                <li>REST endpoints for future API integrations</li>
+            </ul>
+        </div>
+        
+        <div class="arch-arrow">→</div>
+        
+        <div class="arch-box arch-db">
+            <div class="arch-icon">💾</div>
+            <h3>Database<br/>(SQLite/MySQL/Postgres)</h3>
+            <ul class="arch-features">
+                <li>Users</li>
+                <li>Customers</li>
+                <li>Phones</li>
+                <li>Rate plans</li>
+                <li>Orders</li>
+                <li>Status history</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="about-section">
+    <h2>Current Features</h2>
+    <ul class="feature-list">
+        <li>Multi-user login system (Anthony, Dominic, Rene, Admin)</li>
+        <li>Order tracking across full lifecycle (New → Pending Activation → Activated → Cancelled/Returned)</li>
+        <li>Linked entities: customer, phone, rate plan on each order</li>
+        <li>Basic filters for status, owner, store location</li>
+        <li>Phone catalog with 20+ Bell devices (brands, models, storage, colours, pricing)</li>
+        <li>Bell rate plan reference catalog</li>
+        <li>Customer management with search functionality</li>
+        <li>Order status history timeline</li>
+        <li>Responsive, professional UI with Cellcom-inspired branding</li>
+    </ul>
+</div>
+
+<div class="about-section">
+    <h2>Future Features / Roadmap</h2>
+    <ul class="feature-list roadmap">
+        <li><strong>SMS/Email Updates:</strong> Automated notifications to customers on status changes</li>
+        <li><strong>REST APIs/Webhooks:</strong> Integration endpoints to connect with Bell and third-party systems</li>
+        <li><strong>Analytics Dashboard:</strong> Orders per store/rep, rate plan mix, activation times, performance metrics</li>
+        <li><strong>Multi-Carrier Support:</strong> Expand beyond Bell to support Telus, Rogers, Fizz, and other carriers</li>
+        <li><strong>Store/Region Hierarchy:</strong> Advanced permissioning and organizational structure</li>
+        <li><strong>Inventory Integration:</strong> Real-time stock availability per store location</li>
+        <li><strong>Customer Portal:</strong> Self-service order tracking for customers</li>
+        <li><strong>Reporting:</strong> Export orders to CSV/PDF, generate monthly reports</li>
+        <li><strong>Mobile App:</strong> Native iOS/Android app for reps on the go</li>
+    </ul>
+</div>
+
+<div class="about-section">
+    <h2>Technical Stack</h2>
+    <ul class="tech-list">
+        <li><strong>Backend:</strong> Python 3, Flask, SQLAlchemy</li>
+        <li><strong>Frontend:</strong> Jinja2 templates, vanilla JavaScript, custom CSS</li>
+        <li><strong>Database:</strong> SQLite (dev), MySQL/PostgreSQL (production)</li>
+        <li><strong>Authentication:</strong> Flask sessions with bcrypt password hashing</li>
+        <li><strong>Deployment:</strong> Gunicorn WSGI server, Nginx reverse proxy, HostPapa VPS</li>
+    </ul>
+</div>
+{% endblock %}
+

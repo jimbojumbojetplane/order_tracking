@@ -1,0 +1,425 @@
+[
+  {
+    "brand": "Apple",
+    "model": "iPhone 16 Pro",
+    "storage": "128 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16P128",
+    "full_price": 1399.0,
+    "is_featured": true
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16 Pro",
+    "storage": "256 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16P256",
+    "full_price": 1678.8,
+    "is_featured": true
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16 Pro",
+    "storage": "512 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16P512",
+    "full_price": 2098.5,
+    "is_featured": true
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16 Pro",
+    "storage": "1 TB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16P1T",
+    "full_price": 2798.0,
+    "is_featured": true
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16 Pro Max",
+    "storage": "256 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16PM256",
+    "full_price": 1918.8,
+    "is_featured": true
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16 Pro Max",
+    "storage": "512 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16PM512",
+    "full_price": 2398.5,
+    "is_featured": true
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16 Pro Max",
+    "storage": "1 TB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16PM1T",
+    "full_price": 3198.0,
+    "is_featured": true
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16",
+    "storage": "128 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16128",
+    "full_price": 1049.0,
+    "is_featured": false
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16",
+    "storage": "256 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16256",
+    "full_price": 1258.8,
+    "is_featured": false
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16",
+    "storage": "512 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16512",
+    "full_price": 1573.5,
+    "is_featured": false
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16 Plus",
+    "storage": "128 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16P128",
+    "full_price": 1199.0,
+    "is_featured": false
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16 Plus",
+    "storage": "256 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16P256",
+    "full_price": 1438.8,
+    "is_featured": false
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 16 Plus",
+    "storage": "512 GB",
+    "colour": "Space Black",
+    "bell_sku": "IPH16P512",
+    "full_price": 1798.5,
+    "is_featured": false
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9 Pro Fold",
+    "storage": "256 GB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9P256",
+    "full_price": 2638.8,
+    "is_featured": true
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9 Pro XL",
+    "storage": "128 GB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9PM128",
+    "full_price": 1299.0,
+    "is_featured": true
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9 Pro XL",
+    "storage": "256 GB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9PM256",
+    "full_price": 1558.8,
+    "is_featured": true
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9 Pro XL",
+    "storage": "512 GB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9PM512",
+    "full_price": 1948.5,
+    "is_featured": true
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9 Pro XL",
+    "storage": "1 TB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9PM1T",
+    "full_price": 2598.0,
+    "is_featured": true
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9",
+    "storage": "128 GB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9128",
+    "full_price": 899.0,
+    "is_featured": false
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9",
+    "storage": "256 GB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9256",
+    "full_price": 1078.8,
+    "is_featured": false
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9 Pro",
+    "storage": "128 GB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9P128",
+    "full_price": 1099.0,
+    "is_featured": false
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9 Pro",
+    "storage": "256 GB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9P256",
+    "full_price": 1318.8,
+    "is_featured": false
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9 Pro",
+    "storage": "512 GB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9P512",
+    "full_price": 1648.5,
+    "is_featured": false
+  },
+  {
+    "brand": "Google",
+    "model": "Pixel 9 Pro",
+    "storage": "1 TB",
+    "colour": "Obsidian",
+    "bell_sku": "PIX9P1T",
+    "full_price": 2198.0,
+    "is_featured": false
+  },
+  {
+    "brand": "Motorola",
+    "model": "Edge 50 Ultra",
+    "storage": "512 GB",
+    "colour": "Deep Forest",
+    "bell_sku": "MT50PM512",
+    "full_price": 1498.5,
+    "is_featured": true
+  },
+  {
+    "brand": "Motorola",
+    "model": "Edge 50 Ultra",
+    "storage": "1 TB",
+    "colour": "Deep Forest",
+    "bell_sku": "MT50PM1T",
+    "full_price": 1998.0,
+    "is_featured": true
+  },
+  {
+    "brand": "Motorola",
+    "model": "Edge 2024",
+    "storage": "256 GB",
+    "colour": "Deep Forest",
+    "bell_sku": "MT2024256",
+    "full_price": 958.8,
+    "is_featured": false
+  },
+  {
+    "brand": "Motorola",
+    "model": "Edge 2025",
+    "storage": "256 GB",
+    "colour": "Deep Forest",
+    "bell_sku": "MT2025256",
+    "full_price": 1078.8,
+    "is_featured": false
+  },
+  {
+    "brand": "Motorola",
+    "model": "Razr+ 2024",
+    "storage": "256 GB",
+    "colour": "Deep Forest",
+    "bell_sku": "MT2024R256",
+    "full_price": 1438.8,
+    "is_featured": false
+  },
+  {
+    "brand": "OnePlus",
+    "model": "OnePlus 12",
+    "storage": "256 GB",
+    "colour": "Silky Black",
+    "bell_sku": "OP12P256",
+    "full_price": 1258.8,
+    "is_featured": false
+  },
+  {
+    "brand": "OnePlus",
+    "model": "OnePlus 12",
+    "storage": "512 GB",
+    "colour": "Silky Black",
+    "bell_sku": "OP12P512",
+    "full_price": 1573.5,
+    "is_featured": false
+  },
+  {
+    "brand": "OnePlus",
+    "model": "OnePlus 13",
+    "storage": "256 GB",
+    "colour": "Silky Black",
+    "bell_sku": "OP13P256",
+    "full_price": 1378.8,
+    "is_featured": false
+  },
+  {
+    "brand": "OnePlus",
+    "model": "OnePlus 13",
+    "storage": "512 GB",
+    "colour": "Silky Black",
+    "bell_sku": "OP13P512",
+    "full_price": 1723.5,
+    "is_featured": false
+  },
+  {
+    "brand": "OnePlus",
+    "model": "OnePlus 13",
+    "storage": "1 TB",
+    "colour": "Silky Black",
+    "bell_sku": "OP13P1T",
+    "full_price": 2298.0,
+    "is_featured": false
+  },
+  {
+    "brand": "OnePlus",
+    "model": "OnePlus 13R",
+    "storage": "256 GB",
+    "colour": "Silky Black",
+    "bell_sku": "OP13P256",
+    "full_price": 958.8,
+    "is_featured": false
+  },
+  {
+    "brand": "OnePlus",
+    "model": "OnePlus 13R",
+    "storage": "512 GB",
+    "colour": "Silky Black",
+    "bell_sku": "OP13P512",
+    "full_price": 1198.5,
+    "is_featured": false
+  },
+  {
+    "brand": "OnePlus",
+    "model": "OnePlus Open",
+    "storage": "512 GB",
+    "colour": "Silky Black",
+    "bell_sku": "OPONEP512",
+    "full_price": 3298.5,
+    "is_featured": false
+  },
+  {
+    "brand": "Samsung",
+    "model": "Galaxy S24 Ultra",
+    "storage": "256 GB",
+    "colour": "Phantom Black",
+    "bell_sku": "SGS24PM256",
+    "full_price": 1918.8,
+    "is_featured": true
+  },
+  {
+    "brand": "Samsung",
+    "model": "Galaxy S24 Ultra",
+    "storage": "512 GB",
+    "colour": "Phantom Black",
+    "bell_sku": "SGS24PM512",
+    "full_price": 2398.5,
+    "is_featured": true
+  },
+  {
+    "brand": "Samsung",
+    "model": "Galaxy S24 Ultra",
+    "storage": "1 TB",
+    "colour": "Phantom Black",
+    "bell_sku": "SGS24PM1T",
+    "full_price": 3198.0,
+    "is_featured": true
+  },
+  {
+    "brand": "Samsung",
+    "model": "Galaxy Z Fold6",
+    "storage": "256 GB",
+    "colour": "Phantom Black",
+    "bell_sku": "SGS6F256",
+    "full_price": 2698.8,
+    "is_featured": true
+  },
+  {
+    "brand": "Samsung",
+    "model": "Galaxy Z Fold6",
+    "storage": "512 GB",
+    "colour": "Phantom Black",
+    "bell_sku": "SGS6F512",
+    "full_price": 3373.5,
+    "is_featured": true
+  },
+  {
+    "brand": "Samsung",
+    "model": "Galaxy Z Fold6",
+    "storage": "1 TB",
+    "colour": "Phantom Black",
+    "bell_sku": "SGS6F1T",
+    "full_price": 4498.0,
+    "is_featured": true
+  },
+  {
+    "brand": "Samsung",
+    "model": "Galaxy S24",
+    "storage": "128 GB",
+    "colour": "Phantom Black",
+    "bell_sku": "SGS24128",
+    "full_price": 1099.0,
+    "is_featured": false
+  },
+  {
+    "brand": "Samsung",
+    "model": "Galaxy S24",
+    "storage": "256 GB",
+    "colour": "Phantom Black",
+    "bell_sku": "SGS24256",
+    "full_price": 1318.8,
+    "is_featured": false
+  },
+  {
+    "brand": "Samsung",
+    "model": "Galaxy S24+",
+    "storage": "256 GB",
+    "colour": "Phantom Black",
+    "bell_sku": "SGS24256",
+    "full_price": 1558.8,
+    "is_featured": false
+  },
+  {
+    "brand": "Samsung",
+    "model": "Galaxy S24+",
+    "storage": "512 GB",
+    "colour": "Phantom Black",
+    "bell_sku": "SGS24512",
+    "full_price": 1948.5,
+    "is_featured": false
+  }
+]

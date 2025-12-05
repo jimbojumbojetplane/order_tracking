@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Lite",
+    "monthly_price": 70.0,
+    "data_gb": 60,
+    "unlimited_canada": true,
+    "unlimited_us": false,
+    "roaming_notes": "Unlimited Canada-wide calling | Unlimited Canada texting | Speed: Data at up to 250 Mbps | Features: Hotspot capabilities; SD video streaming",
+    "bell_plan_code": "LITE",
+    "segment": "consumer"
+  },
+  {
+    "name": "Select",
+    "monthly_price": 75.0,
+    "data_gb": 100,
+    "unlimited_canada": true,
+    "unlimited_us": false,
+    "roaming_notes": "Unlimited Canada-wide calling | Unlimited Canada texting | Speed: Data at up to 250 Mbps | Features: Hotspot capabilities; SD video streaming",
+    "bell_plan_code": "SELECT",
+    "segment": "consumer"
+  },
+  {
+    "name": "Max",
+    "monthly_price": 85.0,
+    "data_gb": 200,
+    "unlimited_canada": true,
+    "unlimited_us": false,
+    "roaming_notes": "Unlimited Canada-wide calling and texting | Unlimited minutes for calls from Canada to 27 countries | Speed: Data up to fastest available speed; throttle to 512 Kbps after 200 GB | Features: Hotspot capabilities; Crave Standard With Ads",
+    "bell_plan_code": "MAX",
+    "segment": "consumer"
+  },
+  {
+    "name": "Ultra",
+    "monthly_price": 105.0,
+    "data_gb": 250,
+    "unlimited_canada": true,
+    "unlimited_us": false,
+    "roaming_notes": "Unlimited Canada-wide calling and texting | Unlimited minutes for calls from Canada to 65 countries | Speed: Data at fastest available speed; throttled to 512 Kbps after 250 GB | Features: Hotspot capabilities; Crave Standard With Ads; Get a tablet or smartwatch with SmartPay and a data plan for that device for $0.",
+    "bell_plan_code": "ULTRA",
+    "segment": "consumer"
+  },
+  {
+    "name": "Lite (2-line)",
+    "monthly_price": 70.0,
+    "data_gb": 60,
+    "unlimited_canada": true,
+    "unlimited_us": false,
+    "roaming_notes": "Unlimited calling, texting and data in Canada | Speed: Data at up to 250 Mbps | Features: SD video streaming; Hotspot capabilities; One year of Perplexity Pro AI research tool",
+    "bell_plan_code": "LITE",
+    "segment": "consumer"
+  },
+  {
+    "name": "Select (2-line)",
+    "monthly_price": 75.0,
+    "data_gb": 100,
+    "unlimited_canada": true,
+    "unlimited_us": false,
+    "roaming_notes": "Unlimited calling, texting and data in Canada | Speed: Data at up to 250 Mbps | Features: Hotspot capabilities; SD video streaming; One year of Perplexity Pro AI research tool",
+    "bell_plan_code": "SELECT",
+    "segment": "consumer"
+  },
+  {
+    "name": "Max (2-line)",
+    "monthly_price": 85.0,
+    "data_gb": 200,
+    "unlimited_canada": true,
+    "unlimited_us": true,
+    "roaming_notes": "Unlimited calling, texting and data in Canada and in the U.S | Speed: Data at up to 250 Mbps; 200 GB of data at our fastest available speed | Features: HD video streaming; Hotspot capabilities; Crave Standard With Ads; One year of Perplexity Pro AI research tool",
+    "bell_plan_code": "MAX",
+    "segment": "consumer"
+  },
+  {
+    "name": "Ultra (2-line)",
+    "monthly_price": 105.0,
+    "data_gb": 250,
+    "unlimited_canada": true,
+    "unlimited_us": true,
+    "roaming_notes": "Unlimited minutes for calls from Canada to 65 countries | Unlimited data in Canada and 65 other countries | Unlimited minutes for calls from Canada to 65 countries | Unlimited data in Canada and 65 other countries | Speed: Data at up to 250 Mbps; 250 GB of data at our fastest available speed | Features: HD video streaming; Hotspot capabilities; Crave Standard With Ads; One year of Perplexity Pro AI research tool; Get a tablet or smartwatch with SmartPay and a data plan for that device for $0.",
+    "bell_plan_code": "ULTRA",
+    "segment": "consumer"
+  }
+]

@@ -1,0 +1,41 @@
+# HostPapa Flask Application - Entry Point
+# This file should be in your public_html directory
+
+# Enable mod_wsgi if available
+# If using Passenger or other Python hosting, adjust accordingly
+
+# WSGI Application Entry Point
+# For HostPapa Python hosting or VPS with mod_wsgi
+WSGIProcessGroup %{GLOBAL}
+WSGIApplicationGroup %{GLOBAL}
+
+# Import the WSGI application
+# Adjust path based on your HostPapa setup
+# Common locations: /home/username/public_html/ or /home/username/app/
+
+# For Passenger (if HostPapa uses Passenger for Python apps)
+PassengerEnabled On
+PassengerAppRoot /home/username/public_html
+PassengerAppType wsgi
+PassengerStartupFile wsgi.py
+PassengerPython /usr/bin/python3
+
+# Alternative: For mod_wsgi (if available)
+# WSGIScriptAlias / /home/username/public_html/wsgi.py
+# WSGIDaemonProcess flaskapp python-path=/home/username/public_html:/home/username/public_html/venv/lib/python3.x/site-packages
+# WSGIProcessGroup flaskapp
+
+# Redirect all traffic through Flask
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /wsgi.py/$1 [QSA,PT,L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+

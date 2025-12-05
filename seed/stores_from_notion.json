@@ -1,0 +1,573 @@
+[
+  {
+    "name": "Bell Oshawa",
+    "street": "1383 Wilson Road North #8 (Sobeys Plaza)",
+    "city": "Oshawa",
+    "province": "ON",
+    "postal_code": "L1K 2Z5",
+    "latitude": 43.939071,
+    "longitude": -78.85717799999999,
+    "is_active": true
+  },
+  {
+    "name": "Altair Electronics - Kingston",
+    "street": "750 avenue Progress",
+    "city": "Kingston",
+    "province": "ON",
+    "postal_code": "K7M 7E1",
+    "latitude": 44.2475415,
+    "longitude": -76.5749336,
+    "is_active": true
+  },
+  {
+    "name": "Bell St-Jérôme",
+    "street": "Carrefour du Nord, 900 Boul. Grignon",
+    "city": "St-Jérôme",
+    "province": "QC",
+    "postal_code": "J7Y 3S7",
+    "latitude": 45.79268,
+    "longitude": -74.01846580000002,
+    "is_active": true
+  },
+  {
+    "name": "Bell Bolton",
+    "street": "40 McEwan Drive, Unit D9 SmartCenters Bolton",
+    "city": "Bolton",
+    "province": "ON",
+    "postal_code": "L7E 2Y3",
+    "latitude": 43.8633765,
+    "longitude": -79.7128386,
+    "is_active": true
+  },
+  {
+    "name": "Bell Drummondville",
+    "street": "755 Boul. René-Levesque #34",
+    "city": "Drummondville",
+    "province": "QC",
+    "postal_code": "J2C 6Y7",
+    "latitude": 45.8996723,
+    "longitude": -72.5170553,
+    "is_active": true
+  },
+  {
+    "name": "Bell St-Félicien",
+    "street": "1179 Boul St-Félicien #102",
+    "city": "St-Félicien",
+    "province": "QC",
+    "postal_code": "G8K 3J1",
+    "latitude": 48.655322,
+    "longitude": -72.459538,
+    "is_active": true
+  },
+  {
+    "name": "Bell Brampton (Shoppers World)",
+    "street": "Shoppers World Brampton 499 Main St. S.",
+    "city": "Brampton",
+    "province": "ON",
+    "postal_code": "L6Y 1N7",
+    "latitude": 43.6647764,
+    "longitude": -79.7367901,
+    "is_active": true
+  },
+  {
+    "name": "Bell Edmundston",
+    "street": "464 rue Victoria",
+    "city": "Edmundston",
+    "province": "NB",
+    "postal_code": "E3V 2K5",
+    "latitude": 47.37749489999999,
+    "longitude": -68.3328898,
+    "is_active": true
+  },
+  {
+    "name": "Bell Terrebonne",
+    "street": "1729 chem. Gascon",
+    "city": "Terrebonne",
+    "province": "QC",
+    "postal_code": "J6X 2Z8",
+    "latitude": 45.7169183,
+    "longitude": -73.65488669999999,
+    "is_active": true
+  },
+  {
+    "name": "Bell Vaudreuil",
+    "street": "3120 blvd de la Gare #106",
+    "city": "Vaudreuil",
+    "province": "QC",
+    "postal_code": "J7V0J5",
+    "latitude": 45.4021936,
+    "longitude": -74.0514026,
+    "is_active": true
+  },
+  {
+    "name": "Virgin Versailles",
+    "street": "7275 Sherbrooke Est,#207",
+    "city": "Montréal",
+    "province": "QC",
+    "postal_code": "H1N 1E9",
+    "latitude": 45.5900109,
+    "longitude": -73.53922519999999,
+    "is_active": true
+  },
+  {
+    "name": "Bell Aurora",
+    "street": "91 First Commerce Drive, Unité D10",
+    "city": "Aurora",
+    "province": "ON",
+    "postal_code": "L4G 0G2",
+    "latitude": 44.013694,
+    "longitude": -79.41479,
+    "is_active": true
+  },
+  {
+    "name": "Ventes corporatives",
+    "street": "5200 Rue Paré",
+    "city": "Montréal",
+    "province": "QC",
+    "postal_code": "H4P 1P5",
+    "latitude": 45.4968325,
+    "longitude": -73.6534319,
+    "is_active": true
+  },
+  {
+    "name": "Altair Electronics – Belleville (Repair Store)",
+    "street": "27A Pinnacle St.",
+    "city": "Belleville",
+    "province": "ON",
+    "postal_code": "K8N 0A9",
+    "latitude": 44.15746739999999,
+    "longitude": -77.3790471,
+    "is_active": true
+  },
+  {
+    "name": "Virgin Joliette",
+    "street": "1075 Boulevard Firestone Unit #5020",
+    "city": "Joliette",
+    "province": "QC",
+    "postal_code": "J6E 6X6",
+    "latitude": 46.0327605,
+    "longitude": -73.4246143,
+    "is_active": true
+  },
+  {
+    "name": "Virgin Centre-Laval",
+    "street": "1600, Blvd Le Corbusier #751K",
+    "city": "Laval",
+    "province": "QC",
+    "postal_code": "H7S 1Y9",
+    "latitude": 45.5603711,
+    "longitude": -73.7299956,
+    "is_active": true
+  },
+  {
+    "name": "Bell St-Denis",
+    "street": "4337 rue St-Denis",
+    "city": "Montréal",
+    "province": "QC",
+    "postal_code": "H2J 2K9",
+    "latitude": 45.5229626,
+    "longitude": -73.5801642,
+    "is_active": true
+  },
+  {
+    "name": "Bell Joliette",
+    "street": "1075 boul. Firestone Unit #1470",
+    "city": "Joliette",
+    "province": "QC",
+    "postal_code": "J6E 6X6",
+    "latitude": 46.03705064744251,
+    "longitude": -73.42152439521485,
+    "is_active": true
+  },
+  {
+    "name": "Bell Brockville",
+    "street": "2399 Parkedale Ave Level 1 -8A",
+    "city": "Brockville",
+    "province": "ON",
+    "postal_code": "K6V 3G9",
+    "latitude": 44.6029779,
+    "longitude": -75.6981637,
+    "is_active": true
+  },
+  {
+    "name": "Bell Dorval",
+    "street": "352, Avenue Dorval #370C",
+    "city": "Dorval",
+    "province": "QC",
+    "postal_code": "H9S 3H8",
+    "latitude": 45.4441673,
+    "longitude": -73.7415262,
+    "is_active": true
+  },
+  {
+    "name": "Bell Des Sources",
+    "street": "3476 blvd Des Sources",
+    "city": "DDO",
+    "province": "QC",
+    "postal_code": "H9B 1Z9",
+    "latitude": 45.4857295,
+    "longitude": -73.7992148,
+    "is_active": true
+  },
+  {
+    "name": "Bell Sorel",
+    "street": "450, Boul Poliquin, Local16",
+    "city": "Sorel-Tracy",
+    "province": "QC",
+    "postal_code": "J3P 7R5",
+    "latitude": 46.0232721,
+    "longitude": -73.10369659999999,
+    "is_active": true
+  },
+  {
+    "name": "Bell St-Jovite",
+    "street": "517 rue St-jovite",
+    "city": "Tremblant",
+    "province": "QC",
+    "postal_code": "J8E 2Z9",
+    "latitude": 46.118839,
+    "longitude": -74.5782255,
+    "is_active": true
+  },
+  {
+    "name": "Le Mac Urbain (Repair Store)",
+    "street": "5428 St Laurent Blvd.",
+    "city": "Montréal",
+    "province": "QC",
+    "postal_code": "H2T 1S1",
+    "latitude": 45.5252755,
+    "longitude": -73.5980149,
+    "is_active": true
+  },
+  {
+    "name": "Bell Dolbeau",
+    "street": "1471 Boul. Walberg",
+    "city": "Dolbeau",
+    "province": "QC",
+    "postal_code": "G8L 1H5",
+    "latitude": 48.879068,
+    "longitude": -72.2298198,
+    "is_active": true
+  },
+  {
+    "name": "Bell Midland",
+    "street": "297 King Street",
+    "city": "Midland",
+    "province": "Onatrio",
+    "postal_code": "L4R3M5",
+    "latitude": 44.7492277,
+    "longitude": -79.8844415,
+    "is_active": true
+  },
+  {
+    "name": "Bell Hunt Club",
+    "street": "280 West hunt Club Road, Unit 2",
+    "city": "Stittsville Ottawa",
+    "province": "ON",
+    "postal_code": "",
+    "latitude": 45.3394857,
+    "longitude": -75.7118654,
+    "is_active": true
+  },
+  {
+    "name": "Bell Ste-Agathe",
+    "street": "217 rue principale  Local 102",
+    "city": "Ste-Agathe des Monts",
+    "province": "QC",
+    "postal_code": "J8C 1K5",
+    "latitude": 46.0451992,
+    "longitude": -74.27854909999999,
+    "is_active": true
+  },
+  {
+    "name": "Bell Kingston",
+    "street": "1040 Princess St. Unit C",
+    "city": "Kingston",
+    "province": "ON",
+    "postal_code": "k7L 1H2",
+    "latitude": 44.2426481,
+    "longitude": -76.5159418,
+    "is_active": true
+  },
+  {
+    "name": "Bell Brampton (Called before Cellular Hut)",
+    "street": "475 Charolais Blvd Level 3",
+    "city": "Brampton",
+    "province": "ON",
+    "postal_code": "L6Y 0M2",
+    "latitude": 43.65101,
+    "longitude": -79.75838999999999,
+    "is_active": true
+  },
+  {
+    "name": "Bell St- Sauveur",
+    "street": "153 rue Principale",
+    "city": "St-Sauveur",
+    "province": "QC",
+    "postal_code": "J0R 1R6",
+    "latitude": 45.89716199999999,
+    "longitude": -74.152863,
+    "is_active": true
+  },
+  {
+    "name": "Bell Côte-Vertu",
+    "street": "3131 Blvd Côte-Vertu, #N18",
+    "city": "St-Laurent",
+    "province": "QC",
+    "postal_code": "H4R 1Y8",
+    "latitude": 45.497254,
+    "longitude": -73.7042534,
+    "is_active": true
+  },
+  {
+    "name": "Bell Décarie",
+    "street": "5355 rue des Jockeys",
+    "city": "Montréal",
+    "province": "QC",
+    "postal_code": "H4P 2T8",
+    "latitude": 45.4950049,
+    "longitude": -73.6551848,
+    "is_active": true
+  },
+  {
+    "name": "Bell Bank Street",
+    "street": "247 Bank street",
+    "city": "Ottawa",
+    "province": "ON",
+    "postal_code": "K2P 1X2",
+    "latitude": 45.41644840000001,
+    "longitude": -75.69701959999999,
+    "is_active": true
+  },
+  {
+    "name": "Bell Cobourg",
+    "street": "1111 Elgin St W Level 1 (Northumberland Mall)",
+    "city": "Cobourg",
+    "province": "ON",
+    "postal_code": "K9A 5H7",
+    "latitude": 43.9701555,
+    "longitude": -78.1997406,
+    "is_active": true
+  },
+  {
+    "name": "Bell Versailles",
+    "street": "7275 Sherbrooke Est,#120",
+    "city": "Montréal",
+    "province": "QC",
+    "postal_code": "H1N 1E9",
+    "latitude": 45.5921252,
+    "longitude": -73.54229389999999,
+    "is_active": true
+  },
+  {
+    "name": "Bell Carrefour Laval",
+    "street": "3035, Blvd Le Carrefour, R12",
+    "city": "Laval",
+    "province": "QC",
+    "postal_code": "H7T 1C8",
+    "latitude": 45.5690692,
+    "longitude": -73.7524272,
+    "is_active": true
+  },
+  {
+    "name": "Virgin St-Félicien",
+    "street": "1200 Boul St-Félicien",
+    "city": "St-Félicien",
+    "province": "QC",
+    "postal_code": "G8K 2N6",
+    "latitude": 48.6533086,
+    "longitude": -72.4580287,
+    "is_active": true
+  },
+  {
+    "name": "Bell St-Eustache",
+    "street": "367 Arthur-Sauvé, Suite 112",
+    "city": "St-Eustache",
+    "province": "QC",
+    "postal_code": "J7P2B1",
+    "latitude": 45.5619331,
+    "longitude": -73.9009459,
+    "is_active": true
+  },
+  {
+    "name": "Bell Burlington",
+    "street": "Appleby Crossing 2475 Appleby Line E-10",
+    "city": "Burlington",
+    "province": "ON",
+    "postal_code": "L7L 0B6",
+    "latitude": 43.4057687,
+    "longitude": -79.8051787,
+    "is_active": true
+  },
+  {
+    "name": "Bell Barrhaven",
+    "street": "50 Marketplace ave, Unit 10",
+    "city": "Nepean",
+    "province": "ON",
+    "postal_code": "k2J 5G3",
+    "latitude": 45.26989529999999,
+    "longitude": -75.7434847,
+    "is_active": true
+  },
+  {
+    "name": "Bell Alliston",
+    "street": "36 Young Street, Unit 14",
+    "city": "Alliston",
+    "province": "ON",
+    "postal_code": "L9R 1P8",
+    "latitude": 44.1485987,
+    "longitude": -79.8829266,
+    "is_active": true
+  },
+  {
+    "name": "Bell Stittsville",
+    "street": "1261 Main Street",
+    "city": "Stittsville",
+    "province": "ON",
+    "postal_code": "K2S 2E4",
+    "latitude": 45.2674161,
+    "longitude": -75.92848819999999,
+    "is_active": true
+  },
+  {
+    "name": "Bell Sudbury",
+    "street": "1545 Regent Street, Unit 3",
+    "city": "Sudbury",
+    "province": "ON",
+    "postal_code": "P3E 3Z7",
+    "latitude": 46.4582039,
+    "longitude": -81.0093509,
+    "is_active": true
+  },
+  {
+    "name": "Virgin Carré Décarie",
+    "street": "6900 Decarie Blvd, unit K7",
+    "city": "Côte Saint-Luc",
+    "province": "QC",
+    "postal_code": "H3X 2T8",
+    "latitude": 45.4909614,
+    "longitude": -73.6507566,
+    "is_active": true
+  },
+  {
+    "name": "Bell Chagnon",
+    "street": "1200 Boul Alphonse Desjardins #330",
+    "city": "Lévis",
+    "province": "QC",
+    "postal_code": "G6V 6Y8",
+    "latitude": 46.7964057,
+    "longitude": -71.1717412,
+    "is_active": true
+  },
+  {
+    "name": "Bell Taylor Kidd",
+    "street": "599 Taylor Kidd Blvd. Suite 3",
+    "city": "Kingston",
+    "province": "ON",
+    "postal_code": "K7M 0A2",
+    "latitude": 44.2504088,
+    "longitude": -76.5674047,
+    "is_active": true
+  },
+  {
+    "name": "Bell St-Martin",
+    "street": "1655 blvd Saint-Martin",
+    "city": "Laval",
+    "province": "QC",
+    "postal_code": "H7S 1N2",
+    "latitude": 45.5681811,
+    "longitude": -73.72817069999999,
+    "is_active": true
+  },
+  {
+    "name": "Bell Roberval",
+    "street": "1221 Boul. Marcotte",
+    "city": "Roberval",
+    "province": "QC",
+    "postal_code": "G8H 3B8",
+    "latitude": 48.5240438,
+    "longitude": -72.23325849999999,
+    "is_active": true
+  },
+  {
+    "name": "Bell Collingwood",
+    "street": "122 Hurontario Street",
+    "city": "Collingwood",
+    "province": "ON",
+    "postal_code": "L9Y 2L8",
+    "latitude": 44.499559,
+    "longitude": -80.2173389,
+    "is_active": true
+  },
+  {
+    "name": "Bell Peterborough",
+    "street": "Portage Place 1154 Chemong Rd.",
+    "city": "Peterborough",
+    "province": "ON",
+    "postal_code": "K9H 7J6",
+    "latitude": 44.3293585,
+    "longitude": -78.33926989999999,
+    "is_active": true
+  },
+  {
+    "name": "Virgin Drummondville",
+    "street": "755 Boul. René-Levesque #307",
+    "city": "Drummondville",
+    "province": "QC",
+    "postal_code": "J2C 6Y7",
+    "latitude": 45.899771,
+    "longitude": -72.5165885,
+    "is_active": true
+  },
+  {
+    "name": "Bell SmithFalls",
+    "street": "123 Lombard Street, #7",
+    "city": "Smith Falls",
+    "province": "ON",
+    "postal_code": "K7A 5B8",
+    "latitude": 44.8906722,
+    "longitude": -76.02970800000001,
+    "is_active": true
+  },
+  {
+    "name": "Bell Bowmanville",
+    "street": "2377 Durham Regional Highway #2",
+    "city": "Bowmanville",
+    "province": "ON",
+    "postal_code": "L1C 5A5",
+    "latitude": 43.9087532,
+    "longitude": -78.7100643,
+    "is_active": true
+  },
+  {
+    "name": "Bell Kiosque Laval",
+    "street": "3035, Blvd Le Carrefour, UZ001",
+    "city": "Laval",
+    "province": "QC",
+    "postal_code": "H7T 1C8",
+    "latitude": 45.5698713,
+    "longitude": -73.7521246,
+    "is_active": true
+  },
+  {
+    "name": "Bell St-Dorothée",
+    "street": "916 Autoroute Chomedy O",
+    "city": "Laval",
+    "province": "QC",
+    "postal_code": "H7X 3S9",
+    "latitude": 45.5283285,
+    "longitude": -73.7871811,
+    "is_active": true
+  },
+  {
+    "name": "Virgin Bourassa",
+    "street": "6000 Henri Bourassa E #T002",
+    "city": "Montréal",
+    "province": "QC",
+    "postal_code": "H1G 2T6",
+    "latitude": 45.6061042,
+    "longitude": -73.616806,
+    "is_active": true
+  }
+]
+

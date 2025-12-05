@@ -1,0 +1,18 @@
+[Unit]
+Description=Gunicorn instance to serve Cellcom Order Tracker
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/path/to/cellcom-order-tracker
+Environment="PATH=/path/to/cellcom-order-tracker/venv/bin"
+ExecStart=/path/to/cellcom-order-tracker/venv/bin/gunicorn \
+          --workers 4 \
+          --bind 127.0.0.1:8000 \
+          --timeout 120 \
+          app:app
+
+[Install]
+WantedBy=multi-user.target
+

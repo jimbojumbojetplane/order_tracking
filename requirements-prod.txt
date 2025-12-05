@@ -1,0 +1,25 @@
+# Production requirements for HostPapa
+# Use MySQL or PostgreSQL database drivers based on your HostPapa setup
+
+# Core Flask dependencies
+Flask==3.0.0
+Flask-SQLAlchemy==3.1.1
+Werkzeug==3.0.1
+python-dotenv==1.0.0
+
+# WSGI Server (may be provided by HostPapa, but good to have)
+gunicorn==21.2.0
+
+# Database drivers - install based on your database choice:
+# For MySQL:
+# PyMySQL==1.1.0
+# mysqlclient==2.2.0
+
+# For PostgreSQL:
+# psycopg2-binary==2.9.9
+
+# Choose ONE based on your HostPapa database setup
+# Uncomment the driver for your database:
+# PyMySQL==1.1.0  # MySQL/MariaDB
+# psycopg2-binary==2.9.9  # PostgreSQL
+

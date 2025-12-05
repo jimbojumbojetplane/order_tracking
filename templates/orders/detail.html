@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block title %}Order {{ order.order_number }} - Cellcom Order Tracker{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Order {{ order.order_number }}</h1>
+    <a href="{{ url_for('orders.list_orders') }}" class="btn btn-secondary">Back to Orders</a>
+</div>
+
+<div class="detail-grid">
+    <div class="detail-section">
+        <h2>Order Information</h2>
+        <div class="detail-item">
+            <label>Order Number:</label>
+            <span>{{ order.order_number }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Status:</label>
+            <span class="status-badge status-{{ order.status.lower().replace(' ', '-') }}">{{ order.status }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Store Location:</label>
+            <span>
+                {% if order.store %}
+                    <strong>{{ order.store.name }}</strong><br>
+                    {{ order.store.full_address }}
+                {% else %}
+                    {{ order.store_location }}
+                {% endif %}
+            </span>
+        </div>
+        <div class="detail-item">
+            <label>Created:</label>
+            <span>{{ order.created_at.strftime('%Y-%m-%d %H:%M') }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Last Updated:</label>
+            <span>{{ order.updated_at.strftime('%Y-%m-%d %H:%M') }}</span>
+        </div>
+        {% if order.activation_date %}
+        <div class="detail-item">
+            <label>Activation Date:</label>
+            <span>{{ order.activation_date.strftime('%Y-%m-%d %H:%M') }}</span>
+        </div>
+        {% endif %}
+        <div class="detail-item">
+            <label>Owner:</label>
+            <span>{{ order.user.first_name }}</span>
+        </div>
+    </div>
+
+    <div class="detail-section">
+        <h2>Customer Information</h2>
+        <div class="detail-item">
+            <label>Name:</label>
+            <span><a href="{{ url_for('customers.customer_detail', customer_id=order.customer.id) }}">{{ order.customer.full_name }}</a></span>
+        </div>
+        <div class="detail-item">
+            <label>Phone:</label>
+            <span>{{ order.customer.phone_number }}</span>
+        </div>
+        {% if order.customer.email %}
+        <div class="detail-item">
+            <label>Email:</label>
+            <span>{{ order.customer.email }}</span>
+        </div>
+        {% endif %}
+        {% if order.customer.preferred_store_rel %}
+        <div class="detail-item">
+            <label>Preferred Store:</label>
+            <span>{{ order.customer.preferred_store_rel.name }} - {{ order.customer.preferred_store_rel.city }}</span>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="detail-section">
+        <h2>Device Information</h2>
+        <div class="detail-item">
+            <label>Device:</label>
+            <span><a href="{{ url_for('phones.list_phones') }}">{{ order.phone.display_name }}</a></span>
+        </div>
+        <div class="detail-item">
+            <label>Storage:</label>
+            <span>{{ order.phone.storage }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Colour:</label>
+            <span>{{ order.phone.colour }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Price:</label>
+            <span>${{ "%.2f"|format(order.phone.full_price) }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Bell SKU:</label>
+            <span>{{ order.phone.bell_sku }}</span>
+        </div>
+    </div>
+
+    <div class="detail-section">
+        <h2>Rate Plan Information</h2>
+        <div class="detail-item">
+            <label>Plan Name:</label>
+            <span>{{ order.rate_plan.name }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Monthly Price:</label>
+            <span>${{ "%.2f"|format(order.rate_plan.monthly_price) }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Data:</label>
+            <span>
+                {% if order.rate_plan.data_gb %}
+                    {{ order.rate_plan.data_gb }} GB
+                {% else %}
+                    Unlimited
+                {% endif %}
+            </span>
+        </div>
+        <div class="detail-item">
+            <label>Unlimited Canada:</label>
+            <span>{{ 'Yes' if order.rate_plan.unlimited_canada else 'No' }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Unlimited US:</label>
+            <span>{{ 'Yes' if order.rate_plan.unlimited_us else 'No' }}</span>
+        </div>
+    </div>
+</div>
+
+{% if order.notes %}
+<div class="detail-section">
+    <h2>Notes</h2>
+    <p class="notes-text">{{ order.notes }}</p>
+</div>
+{% endif %}
+
+<div class="detail-section">
+    <h2>Update Status</h2>
+    <form method="POST" action="{{ url_for('orders.update_status', order_id=order.id) }}" class="status-form">
+        <div class="form-group">
+            <label for="status">New Status:</label>
+            <select name="status" id="status" required>
+                <option value="">Select status...</option>
+                <option value="New" {% if order.status == 'New' %}selected{% endif %}>New</option>
+                <option value="Pending Activation" {% if order.status == 'Pending Activation' %}selected{% endif %}>Pending Activation</option>
+                <option value="Activated" {% if order.status == 'Activated' %}selected{% endif %}>Activated</option>
+                <option value="Cancelled" {% if order.status == 'Cancelled' %}selected{% endif %}>Cancelled</option>
+                <option value="Returned" {% if order.status == 'Returned' %}selected{% endif %}>Returned</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="comment">Comment (optional):</label>
+            <textarea name="comment" id="comment" rows="3" placeholder="Add a note about this status change..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Status</button>
+    </form>
+</div>
+
+<div class="detail-section">
+    <h2>Status History</h2>
+    <div class="timeline">
+        {% if order.status_history %}
+            {% for history in order.status_history %}
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <span class="timeline-status">{{ history.new_status }}</span>
+                        <span class="timeline-date">{{ history.changed_at.strftime('%Y-%m-%d %H:%M') }}</span>
+                    </div>
+                    {% if history.old_status %}
+                    <div class="timeline-change">{{ history.old_status }} → {{ history.new_status }}</div>
+                    {% endif %}
+                    <div class="timeline-user">Changed by: {{ history.user.first_name }}</div>
+                    {% if history.comment %}
+                    <div class="timeline-comment">{{ history.comment }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-muted">No status history available.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+

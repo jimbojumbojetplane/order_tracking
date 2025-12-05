@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}New Order - Cellcom Order Tracker{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Create New Order</h1>
+    <a href="{{ url_for('orders.list_orders') }}" class="btn btn-secondary">Back to Orders</a>
+</div>
+
+<div class="form-container">
+    <form method="POST" action="{{ url_for('orders.new_order') }}" class="form">
+        <div class="form-group">
+            <label for="customer_id">Customer *</label>
+            <select name="customer_id" id="customer_id" required>
+                <option value="">Select a customer...</option>
+                {% for customer in customers %}
+                <option value="{{ customer.id }}">{{ customer.full_name }} - {{ customer.phone_number }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group form-group-half">
+                <label for="phone_id">Handset / Device *</label>
+                <select name="phone_id" id="phone_id" required>
+                    <option value="">Select a handset...</option>
+                    {% set current_brand = '' %}
+                    {% for phone in phones %}
+                        {% if phone.brand != current_brand %}
+                            {% if current_brand != '' %}
+                                </optgroup>
+                            {% endif %}
+                            <optgroup label="{{ phone.brand }}">
+                            {% set current_brand = phone.brand %}
+                        {% endif %}
+                        <option value="{{ phone.id }}">
+                            {{ phone.model }} - {{ phone.storage }} - {{ phone.colour }} - ${{ "%.2f"|format(phone.full_price) }}
+                            {% if phone.is_featured %} ⭐{% endif %}
+                        </option>
+                    {% endfor %}
+                    {% if current_brand != '' %}
+                        </optgroup>
+                    {% endif %}
+                </select>
+                <small class="form-help">Browse available handsets by brand</small>
+            </div>
+
+            <div class="form-group form-group-half">
+                <label for="rate_plan_id">Rate Plan *</label>
+                <select name="rate_plan_id" id="rate_plan_id" required>
+                    <option value="">Select a rate plan...</option>
+                    {% for plan in rate_plans %}
+                    <option value="{{ plan.id }}">
+                        {{ plan.name }} - ${{ "%.2f"|format(plan.monthly_price) }}/mo
+                        {% if plan.data_gb %} - {{ plan.data_gb }}GB{% else %} - Unlimited{% endif %}
+                        {% if plan.unlimited_us %} 🇺🇸 US Roaming{% endif %}
+                    </option>
+                    {% endfor %}
+                </select>
+                <small class="form-help">Choose Bell rate plan for this order</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="store_id">Store Location *</label>
+            <select name="store_id" id="store_id" required>
+                <option value="">Select a store...</option>
+                {% set current_city = '' %}
+                {% for store in stores %}
+                    {% if store.city != current_city %}
+                        {% if current_city != '' %}
+                            </optgroup>
+                        {% endif %}
+                        <optgroup label="{{ store.city }}, {{ store.province }}">
+                        {% set current_city = store.city %}
+                    {% endif %}
+                    <option value="{{ store.id }}" {% if default_store_id == store.id %}selected{% endif %}>
+                        {{ store.name }}
+                        {% if store.street %} - {{ store.street }}{% endif %}
+                    </option>
+                {% endfor %}
+                {% if current_city != '' %}
+                    </optgroup>
+                {% endif %}
+            </select>
+            <small class="form-help">Choose the store where this order is being placed</small>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes (optional)</label>
+            <textarea name="notes" id="notes" rows="4" placeholder="Add any notes about this order..."></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Create Order</button>
+            <a href="{{ url_for('orders.list_orders') }}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
+

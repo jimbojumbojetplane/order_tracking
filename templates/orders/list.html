@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Orders - Cellcom Order Tracker{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Orders</h1>
+    <a href="{{ url_for('orders.new_order') }}" class="btn btn-primary">New Order</a>
+</div>
+
+<div class="filters">
+    <form method="GET" action="{{ url_for('orders.list_orders') }}" class="filter-form">
+        <div class="filter-group">
+            <label for="status">Status:</label>
+            <select name="status" id="status">
+                <option value="">All Statuses</option>
+                {% for status in statuses %}
+                <option value="{{ status }}" {% if current_status == status %}selected{% endif %}>{{ status }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="owner">Owner:</label>
+            <select name="owner" id="owner">
+                <option value="">All Owners</option>
+                {% for user in users %}
+                <option value="{{ user.id }}" {% if current_owner == user.id|string %}selected{% endif %}>{{ user.first_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="store">Store:</label>
+            <select name="store" id="store">
+                <option value="">All Stores</option>
+                {% for store in stores %}
+                <option value="{{ store.id }}" {% if current_store == store.id|string %}selected{% endif %}>{{ store.name }} - {{ store.city }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-secondary">Filter</button>
+        <a href="{{ url_for('orders.list_orders') }}" class="btn btn-link">Clear</a>
+    </form>
+</div>
+
+<div class="table-container">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Order #</th>
+                <th>Customer</th>
+                <th>Phone</th>
+                <th>Rate Plan</th>
+                <th>Status</th>
+                <th>Store</th>
+                <th>Owner</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if orders %}
+                {% for order in orders %}
+                <tr>
+                    <td><a href="{{ url_for('orders.order_detail', order_id=order.id) }}" class="link">{{ order.order_number }}</a></td>
+                    <td>{{ order.customer.full_name }}</td>
+                    <td>{{ order.phone.display_name }} ({{ order.phone.storage }})</td>
+                    <td>{{ order.rate_plan.name }}</td>
+                    <td><span class="status-badge status-{{ order.status.lower().replace(' ', '-') }}">{{ order.status }}</span></td>
+                    <td>
+                        {% if order.store %}
+                            {{ order.store.name }} - {{ order.store.city }}
+                        {% else %}
+                            {{ order.store_location }}
+                        {% endif %}
+                    </td>
+                    <td>{{ order.user.first_name }}</td>
+                    <td>{{ order.created_at.strftime('%Y-%m-%d') }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="8" class="text-center">No orders found.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

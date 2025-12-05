@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Store {{ store.name }} - Cellcom Order Tracker{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ store.name }}</h1>
+    <a href="{{ url_for('stores.list_stores') }}" class="btn btn-secondary">Back to Stores</a>
+</div>
+
+<div class="detail-grid">
+    <div class="detail-section">
+        <h2>Store Information</h2>
+        <div class="detail-item">
+            <label>Store Name:</label>
+            <span>{{ store.name }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Address:</label>
+            <span>{{ store.full_address }}</span>
+        </div>
+        <div class="detail-item">
+            <label>City:</label>
+            <span>{{ store.city }}</span>
+        </div>
+        <div class="detail-item">
+            <label>Province:</label>
+            <span>{{ store.province }}</span>
+        </div>
+        {% if store.postal_code %}
+        <div class="detail-item">
+            <label>Postal Code:</label>
+            <span>{{ store.postal_code }}</span>
+        </div>
+        {% endif %}
+        {% if store.latitude and store.longitude %}
+        <div class="detail-item">
+            <label>Coordinates:</label>
+            <span>{{ store.latitude }}, {{ store.longitude }}</span>
+        </div>
+        {% endif %}
+        <div class="detail-item">
+            <label>Status:</label>
+            <span class="status-badge {% if store.is_active %}status-activated{% else %}status-cancelled{% endif %}">
+                {% if store.is_active %}Active{% else %}Inactive{% endif %}
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="detail-section">
+    <h2>Recent Orders ({{ orders|length }})</h2>
+    {% if orders %}
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Order #</th>
+                    <th>Customer</th>
+                    <th>Device</th>
+                    <th>Rate Plan</th>
+                    <th>Status</th>
+                    <th>Rep</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td><a href="{{ url_for('orders.order_detail', order_id=order.id) }}" class="link">{{ order.order_number }}</a></td>
+                    <td>{{ order.customer.full_name }}</td>
+                    <td>{{ order.phone.display_name }}</td>
+                    <td>{{ order.rate_plan.name }}</td>
+                    <td><span class="status-badge status-{{ order.status.lower().replace(' ', '-') }}">{{ order.status }}</span></td>
+                    <td>{{ order.user.first_name }}</td>
+                    <td>{{ order.created_at.strftime('%Y-%m-%d') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p class="text-muted">This store has no orders yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
+

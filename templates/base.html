@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cellcom Order Tracker{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="{{ url_for('orders.list_orders') }}" class="nav-logo">Cellcom Order Tracker</a>
+            </div>
+            <div class="nav-right">
+                {% if session.user_first_name %}
+                    <span class="nav-user">Welcome, {{ session.user_first_name }}</span>
+                    <a href="{{ url_for('auth.logout') }}" class="nav-link">Log out</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% if session.user_id %}
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="{{ url_for('orders.list_orders') }}" class="sidebar-link {% if request.endpoint and 'orders' in request.endpoint %}active{% endif %}">
+                    Orders
+                </a>
+                <a href="{{ url_for('customers.list_customers') }}" class="sidebar-link {% if request.endpoint and 'customers' in request.endpoint %}active{% endif %}">
+                    Customers
+                </a>
+                <a href="{{ url_for('phones.list_phones') }}" class="sidebar-link {% if request.endpoint and 'phones' in request.endpoint %}active{% endif %}">
+                    Phones
+                </a>
+                <a href="{{ url_for('rate_plans.list_rate_plans') }}" class="sidebar-link {% if request.endpoint and 'rate_plans' in request.endpoint %}active{% endif %}">
+                    Rate Plans
+                </a>
+                <a href="{{ url_for('stores.list_stores') }}" class="sidebar-link {% if request.endpoint and 'stores' in request.endpoint %}active{% endif %}">
+                    Stores
+                </a>
+                <a href="{{ url_for('about.about') }}" class="sidebar-link {% if request.endpoint == 'about.about' %}active{% endif %}">
+                    About
+                </a>
+            </nav>
+        </aside>
+        {% endif %}
+
+        <main class="main-content">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <div class="flash flash-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
+
