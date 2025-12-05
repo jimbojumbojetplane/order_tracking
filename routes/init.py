@@ -1,14 +1,13 @@
 from flask import Blueprint, jsonify, render_template_string
 from models import db, User, Store
-import seed.seed_users as seed_users
-import seed.seed_stores as seed_stores
-import seed.seed_customers as seed_customers
-import seed.seed_phones as seed_phones
-import seed.seed_rate_plans as seed_rate_plans
-import seed.seed_orders as seed_orders
 import os
 
 init_bp = Blueprint('init', __name__)
+
+@init_bp.route('/test-init', methods=['GET'])
+def test_init():
+    """Simple test route to verify blueprint is registered"""
+    return "<h1>Init blueprint is working!</h1><p>Route /init-db should also work now.</p>"
 
 @init_bp.route('/init-db', methods=['GET'])
 def init_database():
@@ -38,6 +37,19 @@ def init_database():
         user_count_before = User.query.count()
         store_count_before = Store.query.count()
         results['steps'].append(f'Current state: {user_count_before} users, {store_count_before} stores')
+        
+        # Import seed modules dynamically to avoid startup errors
+        try:
+            import seed.seed_stores as seed_stores
+            import seed.seed_users as seed_users
+            import seed.seed_customers as seed_customers
+            import seed.seed_phones as seed_phones
+            import seed.seed_rate_plans as seed_rate_plans
+            import seed.seed_orders as seed_orders
+        except ImportError as ie:
+            results['error'] = f'Failed to import seed modules: {str(ie)}'
+            results['steps'].append(f'✗ Import error: {str(ie)}')
+            raise
         
         # Seed stores (if needed)
         if store_count_before == 0:
